@@ -8,7 +8,7 @@ const Views = () => {
   const navigate = useNavigate();
 
   const displayViews = () => {
-      axios.get(`https://booky-view-2727.herokuapp.com/api/view`)
+      axios.get(`https://booky-view-be.onrender.com/api/view`)
       .then((res)=>setView(res.data))
   }
   useEffect(()=>{
@@ -16,7 +16,7 @@ const Views = () => {
   },[])
 
   const deleteView = (e) => {
-    axios.delete(`https://booky-view-2727.herokuapp.com/api/view/${e.target.value}`,e.target.value)
+    axios.delete(`https://booky-view-be.onrender.com/api/view/${e.target.value}`,e.target.value)
     setView((view) => {
       return view.filter((i) => i._id !==e.target.value)
     })
@@ -31,7 +31,7 @@ const Views = () => {
               </div>
               <div className='row items'>
               <div className='col'>
-              <img width="auto" height="100%" src={item.selectedFile} className="card-img-top" alt="..."/>
+              <img src={item.selectedFile} className="card-img" alt="..."/>
               </div>
                 <div className="col">
                   <p className="card-text">{item.review}</p>

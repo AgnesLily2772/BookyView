@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {FaPlusSquare} from 'react-icons/fa';
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg py-4 navbar-light fixed-top" style={{backgroundColor: "navy"}}>
+    <nav className="navbar navbar-expand-lg py-3 navbar-light fixed-top" style={{backgroundColor: "navy"}}>
     <div className="container">
         <h1 className="navbar-brand text-white">BOOKYVIEW</h1>
         <button className="navbar-toggler btn btn-outline-primary"style={{backgroundColor:"white"}}><Link className="nav-link" to="/createView">Add Review  <FaPlusSquare size={20}/></Link></button>

@@ -8,7 +8,7 @@ const Input = () => {
 
     const handleReviewSubmit =async (e) => {
             e.preventDefault();
-           await axios.post(`https://booky-view-2727.herokuapp.com/api/view`,newView)
+           await axios.post(`https://booky-view-be.onrender.com/api/view`,newView)
             .then((res) => console.log(res))
             navigate('/')
     }
@@ -31,7 +31,7 @@ const Input = () => {
         </div>
         <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">Review</label>
-            <textarea name='review' value={newView.review} onChange={inputHandle} className="form-control" placeholder="Type your review here" id="floatingTextarea2" style={{height:"100px"}}></textarea>
+            <textarea name='review' value={newView.review} onChange={inputHandle} className="form-control" placeholder="Type your review here" id="floatingTextarea2" style={{height:"100px"}} rows={3}></textarea>
         </div>
         <div className='mb-3'>
         <FileBase multiple={false}  onDone={({ base64 }) => setNewView({ ...newView, selectedFile: base64 })} />

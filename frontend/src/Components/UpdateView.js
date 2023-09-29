@@ -7,7 +7,7 @@ const UpdateView = () => {
     const [update,setUpdate] = useState({title:"",author:"",review:"",selectedFile:""})
     const params = useParams();
     useEffect(()=>{
-        axios.get(`https://booky-view-2727.herokuapp.com/api/view/${params.id}`)
+        axios.get(`https://booky-view-be.onrender.com/api/view/${params.id}`)
         .then((data) => setUpdate(data.data))
     },[params.id])
 const inputHandle=(e)=>{
@@ -15,7 +15,7 @@ const inputHandle=(e)=>{
 }
 const handleUpdation = (e)=>{
     e.preventDefault();
-    axios.put(`https://booky-view-2727.herokuapp.com/api/view`,update)
+    axios.put(`https://booky-view-be.onrender.com/api/view`,update)
     .then((res) => setUpdate({title:"",author:"",review:"",selectedFile:""}))
     navigate('/')
 }
